@@ -10,7 +10,9 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        static: './dist',
+        port:8000,
+        hot: true,
+        open: true,
     },
     module: {
 

@@ -2,7 +2,7 @@ import { MongoClient, ServerApiVersion} from "mongodb";
 
 const ATLAS_URI = "mongodb+srv://rsypertjr:Syp3rtDatabase123!@cluster0.nttvk9d.mongodb.net/?retryWrites=true&w=majority";
 
-const connectionString = process.env.ATLAS_URI || "";
+const connectionString = ATLAS_URI || "";
 
 const client = new MongoClient(connectionString,{
     serverApi: {

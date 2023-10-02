@@ -1,11 +1,15 @@
 
 import carsearch from "./routes/carsearch.mjs";
-const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
+import express from 'express';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import cors from "cors";
+import config from './webpack.config.js';
+
 
 const app = express();
-const config = require('./webpack.config.js');
+app.use(cors());
+
 const compiler = webpack(config);
 
 app.use("/carsearch",carsearch);

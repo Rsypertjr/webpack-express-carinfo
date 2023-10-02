@@ -349,7 +349,7 @@ const setUpPreviousSearches = () => {
     setCarMakes([]);
     setCarModels([]);
     setYears([]);
-    fetch('http://localhost:8081/carsearch')
+    fetch('http://localhost:3000/carsearch')
     .then(response => response.json())
     .then(response => {
         console.log("Response from Server for Get: ",response);
@@ -444,7 +444,7 @@ const exitPreviousSearch = () => {
 
 
 const postCarSearch = ( url, searchString, searchItems, carSiteLabel, carMakeLabel, carModelLabel, yearLabel, location) => {
-    fetch('http://localhost:8081/carsearch', {
+    fetch('http://localhost:3000/carsearch', {
         method: 'POST',
         body: JSON.stringify({
             carsite_url: url,
