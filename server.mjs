@@ -1,6 +1,5 @@
 
 import carsearch from "./routes/carsearch.mjs";
-import "./loadEnvironment.mjs";
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
