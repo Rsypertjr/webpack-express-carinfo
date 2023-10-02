@@ -1,0 +1,25 @@
+import React from "react";
+
+import ReactDOM from "react-dom";
+import { Route, Routes } from "react-router-dom";
+import Display from "./components/display.js";
+
+
+
+
+const App = () => {
+  return (
+
+  <div>
+    <Routes>
+      <Route exact path="/" element={<Display />} />
+    </Routes>
+
+  </div>
+
+);
+};
+
+
+
+ReactDOM.render(<App />, document.querySelector("#app"));

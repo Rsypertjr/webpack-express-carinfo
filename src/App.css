@@ -1,0 +1,35 @@
+h1{
+    color:teal
+}
+
+#carousel_display{
+    position:relative;
+    height:50%;
+
+}
+
+#carimage_carousel, #top_icon_display_carousel{
+    position:relative;
+}
+
+#site_instruction_carousel, #accordianContainer {
+    position:relative;
+    padding: 0 10%;
+}
+
+#topCarsiteDisplay{
+    position:relative;
+    width:55%;
+    height:40%;
+    padding:5% 0;
+
+}
+
+#siteInstructions{
+    max-height:380px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+
+    color: black;
+}

@@ -5,15 +5,42 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        print: './src/print.js',
+        carousel: './src/components/carousel.jsx',
+        display: './src/components/display.jsx'
     },
     devtool: 'inline-source-map',
     devServer: {
         static: './dist',
     },
+    module: {
+
+        rules: [
+    
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader", 
+              options: { 
+                presets: ["@babel/preset-env", "@babel/preset-react"], 
+              },
+            },          
+          },
+          {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+          },
+          {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+          }
+    
+        ]
+    
+    },    
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Development',
+            title: 'Webpack React',
         }),
     ],
     output: {
