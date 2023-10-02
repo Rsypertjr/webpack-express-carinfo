@@ -1,6 +1,6 @@
-import express from "express";
-import {db, conn} from "../db/conn.mjs";
-import { ObjectId } from "mongodb";
+const express = require("express");
+const [db, conn] = require("../db/conn.mjs");
+const [ObjectId] = require("mongodb");
 
 
 const router = express.Router();
@@ -75,4 +75,3 @@ router.use((err, req, res, next) => {
     // handle error in this middleware
 });
 
-export default router;
