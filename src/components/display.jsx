@@ -349,7 +349,7 @@ const setUpPreviousSearches = () => {
     setCarMakes([]);
     setCarModels([]);
     setYears([]);
-    fetch('http://159.65.100.7:3000/api/carsearch')
+    fetch('https://wbcarserver.rsypertjr.net/carsearch')
     .then(response => response.json())
     .then(response => {
         console.log("Response from Server for Get: ",response);
@@ -444,7 +444,7 @@ const exitPreviousSearch = () => {
 
 
 const postCarSearch = ( url, searchString, searchItems, carSiteLabel, carMakeLabel, carModelLabel, yearLabel, location) => {
-    fetch('http://159.65.100.7/api/carsearch', {
+    fetch('https://wbcarserver.rsypertjr.net/carsearch', {
         method: 'POST',
         body: JSON.stringify({
             carsite_url: url,
