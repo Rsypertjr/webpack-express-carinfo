@@ -20,11 +20,13 @@ const HTML_FILE = path.join(DIST_DIR, 'index.html');
 app.use(express.static(DIST_DIR));
 
 app.use(cors());
-app.use("/carsearch",carsearch);
 
 app.get('/', (req, res) => {
     res.sendFile(HTML_FILE)
 })
+
+
+app.use("/api/carsearch",carsearch);
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
