@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: {
         index: './src/index.js',
         carousel: './src/components/carousel.jsx',
@@ -9,16 +10,16 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        port:8000,
-        hot: true,
-        open: true,
+        //hot: true,
+        //open: true,
         proxy: {
             '/api': {
-                 target: 'http://localhost:8000',
-                 router: () => 'http://localhost:3000',
+                 target: 'http://159.65.100.7:9000',
+                 router: () => 'http://159.65.100.7:3000',
                  logLevel: 'debug' /*optional*/
             }
-         }
+         },
+        static: './dist',
     },
     module: {
 

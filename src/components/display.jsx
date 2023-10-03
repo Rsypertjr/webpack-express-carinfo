@@ -349,7 +349,7 @@ const setUpPreviousSearches = () => {
     setCarMakes([]);
     setCarModels([]);
     setYears([]);
-    fetch('http://localhost:3000/api/carsearch')
+    fetch('http://159.65.100.7:3000/api/carsearch')
     .then(response => response.json())
     .then(response => {
         console.log("Response from Server for Get: ",response);
@@ -444,7 +444,7 @@ const exitPreviousSearch = () => {
 
 
 const postCarSearch = ( url, searchString, searchItems, carSiteLabel, carMakeLabel, carModelLabel, yearLabel, location) => {
-    fetch('http://localhost:3000/api/carsearch', {
+    fetch('http://159.65.100.7/api/carsearch', {
         method: 'POST',
         body: JSON.stringify({
             carsite_url: url,
@@ -585,7 +585,7 @@ const postCarSearch = ( url, searchString, searchItems, carSiteLabel, carMakeLab
                 </Row>
                 )  
             }
-            { showCarSiteIcons && (
+            { showCarSiteIcons && !showPreviousSearches && (
                 <Row id="top_icon_display_carousel"> 
                     <DoCarousel images={car_site_links} carditems="" id="topIconDisplay"/>
                 </Row>
